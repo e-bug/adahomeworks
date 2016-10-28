@@ -1,0 +1,27 @@
+Canton,ABBR,Name,Language
+1,ZH,Zurich,German
+2,BE,Bern,German;French
+3,LU,Luzern,German
+4,UR,Uri,German
+5,SZ,Schwyz,German
+6,OW,Obwalden,German
+7,NW,Nidwalden,German
+8,GL,Glarus,German
+9,ZG,Zug,German
+10,FR,Fribourg,French;German
+11,SO,Solothurn,German
+12,BS,Basel-Stadt,German
+13,BL,Basel-Landschaft,German
+14,SH,Schaffhausen,German
+15,AR,Appenzell Ausserrhoden,German
+16,AI,Appenzell Innerrhoden,German
+17,SG,St. Gallen,German
+18,GR,Graubunden,German;Romansh;Italian
+19,AG,Aargau,German
+20,TG,Thurgau,German
+21,TI,Ticino,Italian
+22,VD,Vaud,French
+23,VS,Valais,French;German
+24,NE,Neuchatel,French
+25,GE,Geneva,French
+26,JU,Jura,French
