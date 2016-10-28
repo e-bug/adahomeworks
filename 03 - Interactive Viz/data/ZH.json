@@ -1,0 +1,184 @@
+{
+  "axes": [
+    {
+      "properties": {
+        "labels": {
+          "angle": {
+            "value": -60
+          }
+        }
+      },
+      "scale": "x",
+      "title": "Universities in ZH",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "title": "Amount [M CHF]",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "Amount",
+          "idx": "SIAF",
+          "val": 19.169965
+        },
+        {
+          "col": "Amount",
+          "idx": "ZH",
+          "val": 1826.8426750000006
+        },
+        {
+          "col": "Amount",
+          "idx": "EAWAG",
+          "val": 74.61922237
+        },
+        {
+          "col": "Amount",
+          "idx": "EMPA",
+          "val": 58.57451592
+        },
+        {
+          "col": "Amount",
+          "idx": "FHKD",
+          "val": 1.09028
+        },
+        {
+          "col": "Amount",
+          "idx": "ZFH",
+          "val": 44.84345312
+        },
+        {
+          "col": "Amount",
+          "idx": "SIK-ISEA",
+          "val": 4.64955
+        },
+        {
+          "col": "Amount",
+          "idx": "HfH",
+          "val": 2.839872
+        },
+        {
+          "col": "Amount",
+          "idx": "ETHZ",
+          "val": 1635.5966182500003
+        },
+        {
+          "col": "Amount",
+          "idx": "WSL",
+          "val": 48.36038962999999
+        },
+        {
+          "col": "Amount",
+          "idx": "PHZFH",
+          "val": 3.298346
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 300,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 600
+}

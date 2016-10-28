@@ -1,0 +1,164 @@
+{
+  "axes": [
+    {
+      "properties": {
+        "labels": {
+          "angle": {
+            "value": -60
+          }
+        }
+      },
+      "scale": "x",
+      "title": "Universities in BE",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "title": "Amount [M CHF]",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "Amount",
+          "idx": "HEPBEJUNE",
+          "val": 0.62738
+        },
+        {
+          "col": "Amount",
+          "idx": "BFH",
+          "val": 31.028695
+        },
+        {
+          "col": "Amount",
+          "idx": "PHBern",
+          "val": 1.9903896
+        },
+        {
+          "col": "Amount",
+          "idx": "BE",
+          "val": 1519.3730346900002
+        },
+        {
+          "col": "Amount",
+          "idx": "EHB",
+          "val": 2.086572
+        },
+        {
+          "col": "Amount",
+          "idx": "AGS",
+          "val": 33.115719
+        },
+        {
+          "col": "Amount",
+          "idx": "RWS",
+          "val": 0.569579
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 300,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 600
+}
